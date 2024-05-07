@@ -12,7 +12,9 @@ se levanta en localhost, no pude hostearlo
 desde el ide se corre la clase Ejercicio2, o bien se compila con ```mvn clean package```
 y luego se ejecuta el .jar generado dentro de la carpeta target con ```java -jar eldar-1.0-SNAPSHOT.jar```
 está compilado para java 17
-recibe parametros del get en la url /tasa, ejemplo http://localhost:8080/tasa?marca=VISA&monto=1000
+recibe parametros del get en el body formato json url /tasa, ejemplo http://localhost:8080/tasa
+body {"marca":"visa","monto":1000}
+las marcas disponibles son visa, nara o amex. si se ingresa otra marca lanza una excepcion.
 
 ## ejercicio 3 PL/SQL
 
