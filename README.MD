@@ -2,7 +2,7 @@ las clases ejecutables Ejercicio1 y Ejercicio5 no estan empaquetadas como ejecut
 ya que estoy usando una librería externa para logging
 
 ## ejercicio 1
-# crea una clase ejecutable con 3 objetos...
+### crea una clase ejecutable con 3 objetos...
 la clase Ejercicio1 es ejecutable, inicialmente tenia una instancia de cada tarjeta, pero luego la adapté para que reciba por parametro
 nombre de tarjeta y monto ej.
 Ejercicio1 visa 23.45
