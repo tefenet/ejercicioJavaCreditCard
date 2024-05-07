@@ -1,20 +1,25 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.time.temporal.ValueRange;
 import java.util.Objects;
 
 public abstract class TarjetaCredito {
 
-
     private String marca;
-
     private String numero;
-
-    private String cardholder;
-
+    private CardHolder cardholder;
     private LocalDate fechaVencimiento;
 
-    protected TarjetaCredito(String marca, String numero, String cardholder, LocalDate fechaVencimiento) {
+    protected TarjetaCredito(String marca) {
+        numero="0000 0000 0000 0000";
+        this.marca=marca;
+        cardholder=new CardHolder("","");
+        fechaVencimiento=LocalDate.now().plusDays(60);
+
+    }
+
+    protected TarjetaCredito(String marca, String numero, CardHolder cardholder, LocalDate fechaVencimiento) {
         this.marca = marca;
         this.numero = numero;
         this.cardholder = cardholder;
@@ -47,7 +52,7 @@ public abstract class TarjetaCredito {
         return numero;
     }
 
-    public String getCardholder() {
+    public CardHolder getCardholder() {
         return cardholder;
     }
 
@@ -55,8 +60,9 @@ public abstract class TarjetaCredito {
         return fechaVencimiento;
     }
 
-    public boolean operacionValida(double monto) {
-        return monto < 1000;
+    public boolean operacionValida(double monto) throws IllegalArgumentException {
+        if (monto > 0 && monto + calcularTasa(monto) < 1000.00) return true;
+        else throw new IllegalArgumentException("el monto de operacion debe estar en el rango 0 .. 1000");
     }
 
     public boolean tarjetaValidaParaOperar() {

@@ -4,8 +4,12 @@ import java.time.LocalDate;
 
 public class TarjetaNAR extends TarjetaCredito{
 
-    public TarjetaNAR(String numero, String cardholder, LocalDate fechaVencimiento) {
+    public TarjetaNAR(String numero, CardHolder cardholder, LocalDate fechaVencimiento) {
         super("NARA", numero, cardholder, fechaVencimiento);
+    }
+
+    public TarjetaNAR() {
+        super("NARA");
     }
 
     @Override

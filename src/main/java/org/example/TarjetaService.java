@@ -8,10 +8,10 @@ import java.time.LocalDate;
 public class TarjetaService {
 
     public double calcularTasa(String marca, double monto){
-        TarjetaCredito card = switch (marca) {
-            case "VISA" -> new TarjetaV("", "", LocalDate.now().plusDays(60));
-            case "NARA" -> new TarjetaNAR("", "", LocalDate.now().plusDays(3));
-            case "AMEX" -> new TarjetaAXP("", "", LocalDate.now().plusDays(3));
+        TarjetaCredito card = switch (marca.toUpperCase()) {
+            case "VISA" -> new TarjetaV();
+            case "NARA" -> new TarjetaNAR();
+            case "AMEX" -> new TarjetaAXP();
             default -> throw new IllegalArgumentException("Marca de tarjeta no válida");
         };
         return card.calcularTasa(monto);
