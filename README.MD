@@ -1,4 +1,4 @@
-las clases ejecutables no estan empaquetadas como ejecutables, se corren en el IDE,
+las clases ejecutables Ejercicio1 y Ejercicio5 no estan empaquetadas como ejecutables, se corren en el IDE,
 ya que estoy usando una librería externa para logging
 
 ## ejercicio 1
@@ -9,6 +9,9 @@ Ejercicio1 visa 23.45
 
 ## ejercicio 2
 se levanta en localhost, no pude hostearlo
+desde el ide se corre la clase Ejercicio2, o bien se compila con ```mvn clean package```
+y luego se ejecuta el .jar generado dentro de la carpeta target con ```java -jar eldar-1.0-SNAPSHOT.jar```
+está compilado para java 17
 recibe parametros del get en la url /tasa, ejemplo http://localhost:8080/tasa?marca=VISA&monto=1000
 
 ## ejercicio 3 PL/SQL
